@@ -4,6 +4,7 @@ Importing cryptographic modules for work
 
 '''
 import cryptography.hazmat.primitives
+from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
@@ -108,7 +109,7 @@ def decrypt_text(path_to_text: str, private_key_path: str, sym_key_path: str, pa
 parser = argparse.ArgumentParser()
 group = parser.add_mutually_exclusive_group(required=True)
 group.add_argument('-gen', '--generation', help='Запуск режима генерации ключей')
-group.add_argument('-enc', '--encryption', help='Запуск режима шифрования')
+group.add_argument('-enc', '--encryption', help='Зазпуск режима шифрования')
 group.add_argument('-dec', '--decryption', help='Запуск режима дешифрования')
 
 args = parser.parse_args()
